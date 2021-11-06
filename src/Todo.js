@@ -30,7 +30,11 @@ const Todo = ({ todo, isEditing, setEditingId }) => {
       });
       setEditingId(null);
     }
-
+    
+    if (event.keyCode === 27) {
+      setEditText(todo.text);
+      setEditingId(null);
+    }
     
   };
 

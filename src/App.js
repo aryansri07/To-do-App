@@ -18,8 +18,13 @@ const Header = () =>{
   const keyenter = (event)=>{
     const t1 = text.trim();
     if(event.keyCode == 13 && t1.length>0){
+      const d = new Date();
+      const a1 = d.getDate();
+      const a2 = d.getMonth() + 1;
+      const a3 = d.getFullYear();
+    
       // console.log(text);
-      dispatch({ type: "addTask", payload: t1 });
+      dispatch({ type: "addTask", payload: t1+' '+`${a1}/${a2}/${a3}`+'(start-date)'});
       settext("");
     }
     
